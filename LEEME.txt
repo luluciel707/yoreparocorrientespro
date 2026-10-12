@@ -1,0 +1,36 @@
+YO REPARO CORRIENTES — ASISTENTE CON IA REAL (OPENAI)
+
+QUÉ INCLUYE
+- Web adaptable a celular y computadora.
+- Asistente que manda la descripción a OpenAI desde el servidor para sugerir posibles causas, recomendaciones seguras y preguntas de seguimiento.
+- Precios fijos: instalación de aire acondicionado $150.000 ARS; desinstalación $100.000 ARS.
+- No se inventan precios para otros servicios.
+- La clave API queda en el servidor, nunca en el navegador.
+
+IMPORTANTE: PARA USAR LA IA REAL HACE FALTA UNA CLAVE API Y UN SERVIDOR
+Este ZIP contiene la integración, pero no puede quedar conectado hasta que el administrador configure su propia clave de OpenAI API y lo ejecute en un servidor con acceso a internet. La API puede generar cargos separados de una suscripción de ChatGPT; revisá el uso y los límites de facturación de la cuenta API.
+
+PROBAR EN TU COMPUTADORA (Windows)
+1. Instalá Node.js 20 o superior desde https://nodejs.org/.
+2. Extraé todo el ZIP en una carpeta.
+3. Abrí una terminal dentro de la carpeta yo-reparo-pro.
+4. Ejecutá: npm install
+5. Copiá .env.example y llamá a la copia .env.
+6. Abrí .env y reemplazá el texto de OPENAI_API_KEY por tu clave API real. No compartas el archivo .env ni lo subas a un repositorio público.
+7. Si tu cuenta no tiene acceso al modelo configurado, cambiá OPENAI_MODEL por un modelo habilitado en tu cuenta.
+8. Ejecutá: npm start
+9. Abrí http://localhost:3000 en el navegador. No abras index.html con doble clic: para que funcione la IA, la web debe cargarse desde el servidor.
+10. Probá una descripción en el asistente. El endpoint http://localhost:3000/api/health informa si la clave está configurada.
+
+PUBLICAR EN INTERNET
+Para que los clientes la usen desde sus celulares, publicá el proyecto completo en un hosting que soporte Node.js. Configurá OPENAI_API_KEY y OPENAI_MODEL como variables de entorno secretas en el panel del hosting. No publiques la clave en archivos JavaScript del cliente ni en GitHub. El hosting debe ejecutar `npm start` y servir el sitio y la ruta /api/diagnostico desde el mismo dominio.
+
+FUNCIONAMIENTO Y SEGURIDAD
+- La IA da orientación preliminar; no confirma diagnósticos ni reemplaza una inspección técnica.
+- Los únicos precios publicados son los confirmados por el negocio: instalación de aire $150.000 y desinstalación $100.000.
+- Para otros servicios, el precio se confirma con el profesional; la IA tiene instrucciones explícitas de no inventar importes.
+- Los trabajos de gas deben quedar en manos de profesionales matriculados. Ante olor a gas, salir del lugar y contactar emergencias/proveedor desde afuera.
+- El servidor incluye un límite básico de consultas por IP, pero para producción conviene sumar monitoreo, controles de abuso y políticas de privacidad.
+
+WHATSAPP
+En script.js está configurado WHATSAPP_NUMBER = "3794272383". Confirmá que sea el número comercial correcto y que el enlace funcione en formato internacional para el negocio.

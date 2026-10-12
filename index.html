@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b4e"><meta name="description" content="Yo Reparo Corrientes: servicios técnicos, mantenimiento y estimaciones orientativas.">
+  <title>Yo Reparo Corrientes | Servicios y presupuestos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css"><script src="script.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap">
+  <a class="brand" href="#inicio" aria-label="Yo Reparo Corrientes, inicio"><span class="brand-icon">🔧</span><span>Yo <strong>Reparo</strong><small>CORRIENTES · SOLUCIONES PARA VOS</small></span></a>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+  <nav class="nav-links" id="nav-links"><a href="#servicios">Servicios</a><a href="#estimador">Estimá tu trabajo</a><a href="#como-funciona">Cómo funciona</a><a class="nav-cta" href="#estimador">Consultar presupuesto <span>↗</span></a></nav>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="container hero-grid"><div class="hero-copy">
+  <span class="eyebrow"><span class="status-dot"></span> SERVICIOS EN CORRIENTES</span>
+  <h1>Soluciones confiables para tu hogar y tus <span>equipos.</span></h1>
+  
+<div class="repair-chat" id="repair-chat">
+  <div class="chat-heading">
+    <div class="chat-avatar">YR</div>
+    <div>
+      <h3>Asistente de Yo Reparo</h3>
+      <p>Contame qué necesitás reparar</p>
+    </div>
+    <span class="chat-status">En línea</span>
+  </div>
+
+  <div
+    class="chat-messages"
+    id="chat-messages"
+    role="log"
+    aria-live="polite"
+    aria-label="Conversación con el asistente"
+  >
+    <div class="chat-bubble bot-message">
+      ¡Hola! 👋 Soy el asistente de Yo Reparo Corrientes.
+
+      Contame qué problema tenés o qué servicio necesitás. Te voy a
+      hacer algunas preguntas para orientarte.
+    </div>
+  </div>
+
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button type="button" data-message="Necesito reparar un aire acondicionado">
+      ❄️ Aire acondicionado
+    </button>
+    <button type="button" data-message="Tengo un problema de plomería">
+      🔧 Plomería
+    </button>
+    <button type="button" data-message="Quiero consultar por otro servicio">
+      💬 Otro servicio
+    </button>
+  </div>
+
+  <form class="chat-composer" id="chat-form">
+    <label class="sr-only" for="chat-input">Tu mensaje</label>
+    <textarea
+      id="chat-input"
+      rows="1"
+      maxlength="1800"
+      placeholder="Escribí tu mensaje..."
+      required
+    ></textarea>
+    <button type="submit" id="chat-send" aria-label="Enviar mensaje">
+      <span>Enviar</span>
+      <span aria-hidden="true">➤</span>
+    </button>
+  </form>
+
+  <div class="chat-footer">
+    No reemplaza una revisión profesional. No compartas datos sensibles.
+  </div>
+</div>
+
+<script src="chat.js" defer></script>
+
+  <p>Encontrá el servicio que necesitás y obtené una orientación inicial sobre el costo. Después, coordiná los detalles directamente con nuestro equipo.</p>
+  <div class="hero-actions"><a class="button button-primary" href="#estimador">Estimar presupuesto <span>→</span></a><a class="button button-secondary" href="#servicios">Explorar servicios</a></div>
+  <p class="hero-note">✓ Orientación inicial · Presupuesto final sujeto a revisión profesional</p>
+</div><div class="hero-panel"><div class="panel-top"><span class="panel-icon">✦</span><span class="pill">ASISTENTE DE PRESUPUESTOS</span></div><div class="panel-illustration">🧰</div><h2>Contanos qué necesitás reparar.</h2><p>Te guiamos con preguntas específicas según el tipo de trabajo.</p><div class="panel-footer"><span class="mini-check">✓</span><span>Hogar, instalaciones y servicio técnico</span></div></div></div></section>
+<section class="trust-strip"><div class="container trust-grid"><div><span class="trust-icon">⌂</span><span><strong>Servicios para el hogar</strong><small>Mantenimiento y reparaciones</small></span></div><div><span class="trust-icon">▣</span><span><strong>Servicio técnico</strong><small>Equipos y celulares</small></span></div><div><span class="trust-icon">$</span><span><strong>Estimación orientativa</strong><small>Según los datos del trabajo</small></span></div></div></section>
+<section class="section" id="servicios"><div class="container"><div class="section-heading"><span class="eyebrow">NUESTROS SERVICIOS</span><h2>¿Qué necesitás <span>resolver?</span></h2><p>Elegí una categoría para iniciar una estimación guiada.</p></div><div class="service-grid">
+<article class="service-card"><div class="service-icon">❄️</div><h3>Aires acondicionados</h3><p>Instalación, limpieza, mantenimiento y diagnóstico.</p><button class="text-link choose-service" data-category="aire">Estimar trabajo →</button></article>
+<article class="service-card"><div class="service-icon">🧺</div><h3>Electrodomésticos</h3><p>Revisión y reparación de equipos del hogar.</p><button class="text-link choose-service" data-category="electro">Estimar trabajo →</button></article>
+<article class="service-card"><div class="service-icon">🚿</div><h3>Plomería</h3><p>Pérdidas, canillas, cañerías y sanitarios.</p><button class="text-link choose-service" data-category="plomeria">Estimar trabajo →</button></article>
+<article class="service-card"><div class="service-icon">⚒️</div><h3>Herrería</h3><p>Reparaciones y trabajos metálicos a medida.</p><button class="text-link choose-service" data-category="herreria">Estimar trabajo →</button></article>
+<article class="service-card"><div class="service-icon">📱</div><h3>Celulares</h3><p>Diagnóstico, pantallas, carga y mantenimiento.</p><button class="text-link choose-service" data-category="celular">Estimar trabajo →</button></article>
+<article class="service-card"><div class="service-icon">🔥</div><h3>Termotanques y gas</h3><p>Consultas por instalación y mantenimiento.</p><button class="text-link choose-service" data-category="termotanque">Estimar trabajo →</button></article>
+<article class="service-card"><div class="service-icon">🖌️</div><h3>Pintura</h3><p>Renovación de ambientes y trabajos de pintura.</p><button class="text-link choose-service" data-category="pintura">Estimar trabajo →</button></article>
+<article class="service-card other-card"><div class="service-icon">＋</div><h3>Otro servicio</h3><p>Describí el trabajo y te ayudamos a encaminar la consulta.</p><button class="text-link choose-service" data-category="otro">Contar qué necesitás →</button></article>
+</div></div></section>
+<section class="section estimator-section" id="estimador"><div class="container estimator-grid"><div class="estimator-copy"><span class="eyebrow">ASISTENTE GUIADO</span><h2>Empezá tu <span>presupuesto</span></h2><p>Respondé algunas preguntas para preparar una estimación preliminar y una consulta clara para el equipo de Yo Reparo.</p><ul class="benefit-list"><li><span>✓</span> Posibles causas según los síntomas descriptos</li><li><span>✓</span> Solo se muestran precios confirmados por el negocio</li><li><span>✓</span> Podés continuar por WhatsApp</li></ul><div class="notice"><strong>Transparencia ante todo</strong><p>Solo publicamos los precios confirmados para instalación y desinstalación de aire acondicionado. Para los demás servicios, el asistente orienta sobre posibles causas y recomendaciones según lo que describas, sin inventar importes. La evaluación profesional confirma la falla y el presupuesto final.</p></div></div>
+<form class="estimator-card" id="estimate-form"><div class="form-heading"><span class="form-bubble">✦</span><div><h3>Asistente de presupuestos</h3><p>Completá los datos del trabajo</p></div></div>
+<div class="field"><label for="category">¿Qué servicio necesitás?</label><select id="category" name="category" required><option value="">Seleccioná una categoría</option><option value="aire">Aire acondicionado</option><option value="electro">Electrodomésticos</option><option value="plomeria">Plomería</option><option value="herreria">Herrería</option><option value="celular">Servicio técnico de celulares</option><option value="termotanque">Termotanque / gas</option><option value="pintura">Pintura</option><option value="otro">Otro servicio</option></select></div>
+<div class="field"><label for="task">¿Qué trabajo hay que realizar?</label><select id="task" name="task" required disabled><option value="">Primero elegí un servicio</option></select></div>
+<div class="form-row"><div class="field"><label for="brand">Marca / modelo (si aplica)</label><input id="brand" name="brand" placeholder="Ej. Samsung, Surrey..."></div><div class="field"><label for="zone">Zona o barrio</label><input id="zone" name="zone" placeholder="Ej. Centro, Corrientes"></div></div>
+<div class="field"><label for="details">Describí la falla o el trabajo</label><textarea id="details" name="details" rows="4" placeholder="¿Qué sucede? ¿Desde cuándo? ¿Hay medidas o fotos que puedas aportar?" required></textarea></div>
+<div class="field"><label for="parts">¿Sabés si necesita repuestos?</label><select id="parts" name="parts"><option value="unknown">No estoy seguro/a</option><option value="no">No, que yo sepa</option><option value="yes">Sí, probablemente</option></select></div>
+<button class="button button-primary submit-button" type="submit">Analizar síntomas y preparar consulta <span>→</span></button><p class="form-footnote">No se envían datos automáticamente. Vas a revisar el mensaje antes de abrir WhatsApp.</p><div id="estimate-result" class="result-box" aria-live="polite" hidden></div></form></div></section>
+<section class="section steps-section" id="como-funciona"><div class="container"><div class="section-heading"><span class="eyebrow">SIMPLE Y DIRECTO</span><h2>¿Cómo funciona?</h2><p>Posibles causas y recomendaciones antes de coordinar el trabajo.</p></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon">☑</div><h3>Elegí el servicio</h3><p>Indicá qué necesitás y describí el problema con el mayor detalle posible.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon">✦</div><h3>Prepará la estimación</h3><p>El asistente sugiere posibles causas y recomendaciones según los síntomas. Solo muestra los precios confirmados de instalación y desinstalación de aire acondicionado.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon">💬</div><h3>Confirmá con el equipo</h3><p>Mandá la consulta por WhatsApp para revisar el diagnóstico, disponibilidad y precio final.</p></article></div><p class="safety-note">Los trabajos de gas deben ser evaluados y realizados por profesionales matriculados habilitados cuando corresponda. No manipules instalaciones peligrosas por tu cuenta.</p></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#inicio"><span class="brand-icon">🔧</span><span>Yo <strong>Reparo</strong><strong>Corrientes</strong><small>SOLUCIONES PARA VOS</small></span></a><p>Servicios técnicos y mantenimiento en Corrientes.</p><a href="#estimador">Iniciar consulta ↑</a></div><div class="footer-bottom"><div class="container bottom-inner"><span>© <span id="year"></span> Yo Reparo Corrientes</span><span>Estimaciones orientativas sujetas a confirmación profesional.</span></div></div></footer>
+<a class="whatsapp-float" id="whatsapp-general" href="#estimador" aria-label="Consultar por WhatsApp" title="Consultar por WhatsApp">WA</a>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "name": "yo-reparo-corrientes-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Yo Reparo Corrientes con asistente de diagnóstico preliminar conectado a OpenAI",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@google/genai": "^2.28.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "openai": "^5.20.0"
+  }
+}
