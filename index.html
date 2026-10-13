@@ -48,8 +48,8 @@
     <button type="button" data-message="Necesito reparar un aire acondicionado">
       ❄️ Aire acondicionado
     </button>
-    <button type="button" data-message="Tengo un problema de plomería">
-      🔧 Plomería
+    <button type="button" data-message="Tengo un problema de Electricidad">
+      🔧 Electricidad
     </button>
     <button type="button" data-message="Quiero consultar por otro servicio">
       💬 Otro servicio
@@ -84,7 +84,27 @@
 </div><div class="hero-panel"><div class="panel-top"><span class="panel-icon">✦</span><span class="pill">ASISTENTE DE PRESUPUESTOS</span></div><div class="panel-illustration">🧰</div><h2>Contanos qué necesitás reparar.</h2><p>Te guiamos con preguntas específicas según el tipo de trabajo.</p><div class="panel-footer"><span class="mini-check">✓</span><span>Hogar, instalaciones y servicio técnico</span></div></div></div></section>
 <section class="trust-strip"><div class="container trust-grid"><div><span class="trust-icon">⌂</span><span><strong>Servicios para el hogar</strong><small>Mantenimiento y reparaciones</small></span></div><div><span class="trust-icon">▣</span><span><strong>Servicio técnico</strong><small>Equipos y celulares</small></span></div><div><span class="trust-icon">$</span><span><strong>Estimación orientativa</strong><small>Según los datos del trabajo</small></span></div></div></section>
 <section class="section" id="servicios"><div class="container"><div class="section-heading"><span class="eyebrow">NUESTROS SERVICIOS</span><h2>¿Qué necesitás <span>resolver?</span></h2><p>Elegí una categoría para iniciar una estimación guiada.</p></div><div class="service-grid">
-<article class="service-card"><div class="service-icon">❄️</div><h3>Aires acondicionados</h3><p>Instalación, limpieza, mantenimiento y diagnóstico.</p><button class="text-link choose-service" data-category="aire">Estimar trabajo →</button></article>
+
+<!-- AIRE ACONDICIONADO -->
+<article class="service-card">
+  <div class="service-icon">❄️</div>
+  <h3>Aires acondicionados</h3>
+  <p>Instalación, desinstalación, cambio de capacitor, limpieza y mantenimiento preventivo.</p>
+  <button class="text-link choose-service" data-category="aire">
+    Estimar trabajo →
+  </button>
+</article>
+
+<!-- ELECTRICIDAD -->
+<article class="service-card">
+  <div class="service-icon">⚡</div>
+  <h3>Electricidad</h3>
+  <p>Revisión de fallas eléctricas, instalaciones y consultas de mantenimiento.</p>
+  <button class="text-link choose-service" data-category="electricidad">
+    Estimar trabajo →
+  </button>
+</article>
+
 <article class="service-card"><div class="service-icon">🧺</div><h3>Electrodomésticos</h3><p>Revisión y reparación de equipos del hogar.</p><button class="text-link choose-service" data-category="electro">Estimar trabajo →</button></article>
 <article class="service-card"><div class="service-icon">🚿</div><h3>Plomería</h3><p>Pérdidas, canillas, cañerías y sanitarios.</p><button class="text-link choose-service" data-category="plomeria">Estimar trabajo →</button></article>
 <article class="service-card"><div class="service-icon">⚒️</div><h3>Herrería</h3><p>Reparaciones y trabajos metálicos a medida.</p><button class="text-link choose-service" data-category="herreria">Estimar trabajo →</button></article>
@@ -95,7 +115,7 @@
 </div></div></section>
 <section class="section estimator-section" id="estimador"><div class="container estimator-grid"><div class="estimator-copy"><span class="eyebrow">ASISTENTE GUIADO</span><h2>Empezá tu <span>presupuesto</span></h2><p>Respondé algunas preguntas para preparar una estimación preliminar y una consulta clara para el equipo de Yo Reparo.</p><ul class="benefit-list"><li><span>✓</span> Posibles causas según los síntomas descriptos</li><li><span>✓</span> Solo se muestran precios confirmados por el negocio</li><li><span>✓</span> Podés continuar por WhatsApp</li></ul><div class="notice"><strong>Transparencia ante todo</strong><p>Solo publicamos los precios confirmados para instalación y desinstalación de aire acondicionado. Para los demás servicios, el asistente orienta sobre posibles causas y recomendaciones según lo que describas, sin inventar importes. La evaluación profesional confirma la falla y el presupuesto final.</p></div></div>
 <form class="estimator-card" id="estimate-form"><div class="form-heading"><span class="form-bubble">✦</span><div><h3>Asistente de presupuestos</h3><p>Completá los datos del trabajo</p></div></div>
-<div class="field"><label for="category">¿Qué servicio necesitás?</label><select id="category" name="category" required><option value="">Seleccioná una categoría</option><option value="aire">Aire acondicionado</option><option value="electro">Electrodomésticos</option><option value="plomeria">Plomería</option><option value="herreria">Herrería</option><option value="celular">Servicio técnico de celulares</option><option value="termotanque">Termotanque / gas</option><option value="pintura">Pintura</option><option value="otro">Otro servicio</option></select></div>
+<div class="field"><label for="category">¿Qué servicio necesitás?</label><select id="category" name="category" required><option value="">Seleccioná una categoría</option><option value="aire">Aire acondicionado</option><option value="electro">Electrodomésticos</option><option value="plomeria">Plomería</option><option value="herreria">Herrería</option><option value="celular">Servicio técnico de celulares</option><option value="termotanque">Termotanque / gas</option><option value="pintura">Pintura</option><option value="otro">Otro servicio</option><option value="electricidad">Electricidad</option></select></div>
 <div class="field"><label for="task">¿Qué trabajo hay que realizar?</label><select id="task" name="task" required disabled><option value="">Primero elegí un servicio</option></select></div>
 <div class="form-row"><div class="field"><label for="brand">Marca / modelo (si aplica)</label><input id="brand" name="brand" placeholder="Ej. Samsung, Surrey..."></div><div class="field"><label for="zone">Zona o barrio</label><input id="zone" name="zone" placeholder="Ej. Centro, Corrientes"></div></div>
 <div class="field"><label for="details">Describí la falla o el trabajo</label><textarea id="details" name="details" rows="4" placeholder="¿Qué sucede? ¿Desde cuándo? ¿Hay medidas o fotos que puedas aportar?" required></textarea></div>
