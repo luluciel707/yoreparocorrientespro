@@ -5,16 +5,95 @@ const WHATSAPP_NUMBER = "3794272383"; // Confirmar que sea el número comercial 
 const FIXED_PRICES = {
   aire: { instalacion: 150000, desinstalacion: 100000 }
 };
+
 const SERVICES = {
-  aire: { label: "Aire acondicionado", tasks: [["diagnostico","Revisión / diagnóstico"],["limpieza","Limpieza y mantenimiento"],["instalacion","Instalación"],["desinstalacion","Desinstalación"],["reparacion","Reparación de falla"]] },
-  electro: { label: "Electrodomésticos", tasks: [["diagnostico","Revisión / diagnóstico"],["mantenimiento","Mantenimiento preventivo"],["reparacion","Reparación"]] },
-  plomeria: { label: "Plomería", tasks: [["diagnostico","Revisión de problema"],["perdida","Reparación de pérdida"],["instalacion","Instalación / recambio"],["destapacion","Destapación"]] },
-  herreria: { label: "Herrería", tasks: [["reparacion","Reparación metálica"],["fabricacion","Fabricación a medida"],["instalacion","Instalación / colocación"]] },
-  celular: { label: "Servicio técnico de celulares", tasks: [["diagnostico","Diagnóstico del equipo"],["pantalla","Cambio de pantalla"],["carga","Falla de carga / pin"],["mantenimiento","Mantenimiento de software o equipo"]] },
-  termotanque: { label: "Termotanque / gas", tasks: [["diagnostico","Revisión / diagnóstico"],["mantenimiento","Mantenimiento"],["instalacion","Instalación"]] },
-  pintura: { label: "Pintura", tasks: [["ambiente","Pintura de ambiente"],["superficie","Pintura por superficie"],["reparacion","Preparación / reparación de pared"]] },
-  otro: { label: "Otro servicio", tasks: [["consulta","Consulta general"]] }
+  aire: {
+    label: "Aire acondicionado",
+    tasks: [
+      ["diagnostico", "Revisión / diagnóstico"],
+      ["limpieza", "Limpieza y mantenimiento preventivo"],
+      ["capacitor", "Cambio de capacitor"],
+      ["instalacion", "Instalación"],
+      ["desinstalacion", "Desinstalación"],
+      ["reparacion", "Reparación de falla"]
+    ]
+  },
+
+  electricidad: {
+    label: "Electricidad",
+    tasks: [
+      ["diagnostico", "Revisión de falla eléctrica"],
+      ["instalacion", "Instalación eléctrica"],
+      ["mantenimiento", "Mantenimiento eléctrico"],
+      ["iluminacion", "Instalación o reparación de iluminación"],
+      ["otro", "Otro trabajo eléctrico"]
+    ]
+  },
+
+  electro: {
+    label: "Electrodomésticos",
+    tasks: [
+      ["diagnostico", "Revisión / diagnóstico"],
+      ["mantenimiento", "Mantenimiento preventivo"],
+      ["reparacion", "Reparación"]
+    ]
+  },
+
+  plomeria: {
+    label: "Plomería",
+    tasks: [
+      ["diagnostico", "Revisión de problema"],
+      ["perdida", "Reparación de pérdida"],
+      ["instalacion", "Instalación / recambio"],
+      ["destapacion", "Destapación"]
+    ]
+  },
+
+  herreria: {
+    label: "Herrería",
+    tasks: [
+      ["reparacion", "Reparación metálica"],
+      ["fabricacion", "Fabricación a medida"],
+      ["instalacion", "Instalación / colocación"]
+    ]
+  },
+
+  celular: {
+    label: "Servicio técnico de celulares",
+    tasks: [
+      ["diagnostico", "Diagnóstico del equipo"],
+      ["pantalla", "Cambio de pantalla"],
+      ["carga", "Falla de carga / pin"],
+      ["mantenimiento", "Mantenimiento de software o equipo"]
+    ]
+  },
+
+  termotanque: {
+    label: "Termotanque / gas",
+    tasks: [
+      ["diagnostico", "Revisión / diagnóstico"],
+      ["mantenimiento", "Mantenimiento"],
+      ["instalacion", "Instalación"]
+    ]
+  },
+
+  pintura: {
+    label: "Pintura",
+    tasks: [
+      ["ambiente", "Pintura de ambiente"],
+      ["superficie", "Pintura por superficie"],
+      ["reparacion", "Preparación / reparación de pared"]
+    ]
+  },
+
+  otro: {
+    label: "Otro servicio",
+    tasks: [
+      ["consulta", "Consulta general"]
+    ]
+  }
 };
+
 const $ = (selector) => document.querySelector(selector);
 function money(value) { return new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 }).format(value); }
 function openWhatsApp(message) {
@@ -61,6 +140,37 @@ function symptomGuidance(category, task, rawDescription) {
     if (has("humedad", "moho", "hongos", "se descascara", "descascarada", "ampollas")) add("La pintura puede estar afectada por humedad, filtración, preparación insuficiente o incompatibilidad de materiales.", "Conviene identificar y resolver la causa de la humedad antes de pintar; pintar encima puede ocultar el problema temporalmente.");
     if (has("grieta", "rajadura", "fisura")) add("Puede ser una fisura superficial de pintura/revoque o una grieta que requiera evaluación según tamaño y evolución.", "Tomá una foto y anotá si crece o reaparece. Si es grande, progresiva o atraviesa la pared, pedí una evaluación antes de cubrirla.");
   }
+  
+if (category === "electricidad") {
+  if (has("no prende", "no enciende", "sin corriente", "no funciona")) {
+    add(
+      "Puede haber una interrupción del suministro, una protección activada o una falla en la instalación o el equipo.",
+      "No abras tableros ni manipules cables. Si hay olor a quemado, chispas, humo o calentamiento anormal, alejate y solicitá asistencia profesional."
+    );
+  }
+
+  if (has("chispa", "chispas", "olor a quemado", "cable quemado", "cortocircuito")) {
+    add(
+      "Los síntomas podrían indicar una falla eléctrica que requiere una revisión profesional.",
+      "Dejá de usar la instalación afectada y mantenete alejado. No toques cables ni equipos dañados. Si hay humo o fuego, alejate y contactá a emergencias."
+    );
+  }
+
+  if (has("luz", "lámpara", "lampara", "iluminación", "iluminacion")) {
+    add(
+      "Podría existir una falla en la lámpara, el artefacto de iluminación o su instalación.",
+      "Indicá si afecta a una sola luz o a varias. No desmontes artefactos ni manipules conexiones eléctricas."
+    );
+  }
+
+  if (has("salta la térmica", "salta la termica", "disyuntor", "térmica", "termica")) {
+    add(
+      "Podría existir una sobrecarga, una fuga de corriente o una falla en algún equipo o circuito.",
+      "No fuerces ni vuelvas a conectar repetidamente la protección. Solicitá una revisión de un electricista."
+    );
+  }
+}
+
   if (!suggestions.length) {
     suggestions.push({ possible: "Con la descripción actual no es posible acotar una causa concreta. Puede haber varias causas distintas para un mismo síntoma.", recommendation: "Contá cuándo empezó, qué sucede justo antes de la falla, si ocurre siempre o a veces, y si aparece algún código, ruido, olor o pérdida. Si podés, adjuntá fotos por WhatsApp sin incluir datos personales." });
   }
